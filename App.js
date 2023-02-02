@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Button } from '@rneui/themed';
 import { initializeApp } from "firebase/app";
 import Login from './modules/auth/adapters/components/Login';
-import Navigation from './config/navigation/navigation';
+import Navigation from './config/navigation/Navigation';
 export default function App() {
   // Your web app's Firebase configuration
 const firebaseConfig = {

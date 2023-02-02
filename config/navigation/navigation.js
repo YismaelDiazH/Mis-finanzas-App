@@ -2,8 +2,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "@rneui/base";
-import Profile from "../../modules/profile/adapters/screens/profile";
-import About from "../../modules/about/adapters/screens/About";
+import ProfileStack from "../stack/ProfileStack";
+import AboutStack from "../stack/AboutStack";
 
 const Tab = createBottomTabNavigator();
 export default function Navigation() {
@@ -12,7 +12,7 @@ export default function Navigation() {
       <Tab.Navigator
         // propiedades
         initialRouteName="profile"
-        screenOptions={({ route }) => ({
+        screenOptions={({ route }) => ({//se generan los botones del menu
           tabBarIcon: ({ color }) => screenOptions(route, color),
           tabBarActiveTintColor: "tomato", //Color del icono activo
           tabInactiveTintColor: "gray", //Color para estado inactivo
@@ -22,12 +22,12 @@ export default function Navigation() {
         <Tab.Screen
         name ="profile"
         options={{title: 'Perfil'}}
-        component={Profile}
+        component={ProfileStack}
         />
         <Tab.Screen
         name ="about"
         options={{title: 'Conócenos'}}
-        component={About}
+        component={AboutStack}
         />
       </Tab.Navigator>
     </NavigationContainer>
